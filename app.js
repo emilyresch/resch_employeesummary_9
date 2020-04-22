@@ -17,8 +17,11 @@ const render = require("./lib/htmlRenderer");
 //make an initial question function - asking what the role is 
 //THEN make following questions that relate to specific roles
 //make a confirm input type prompt to ask if they would like to add another teammate
+
+//this is where teammate objects are pushed
 const teamArray = [];
 
+//this is the function that asks initial questions when app is run
 function initialQuestions() {
 
     return inquirer.prompt([{
@@ -46,6 +49,7 @@ function initialQuestions() {
     ]);
 }
 
+//this function invokes the initial questions before asking specific follow up questions. then it creates a new Employee using the specified class.
 async function expandQuestions(){
     try{
         const employee = await initialQuestions();
@@ -84,8 +88,9 @@ function finalQuestion() {
     }).then(function (answers) {
         // console.log(answers);
         if (!answers.teammate) {
-            console.log("You don't want to add another teammate");
+            console.log("You are done adding teammates. Creating your Team Page!");
             // render(teamArray);
+            //call function to write HTML if user is done inputting teammates
             writeHtml();
         } else {
             expandQuestions();
@@ -95,8 +100,10 @@ function finalQuestion() {
 
 }
 
+//async function to write to HTML - it will wait for all the input to be collected before writing the file
 async function writeHtml(){
     const teamHtml = await render(teamArray);
+    //outputPath is created above for me 
     fs.writeFile(outputPath, teamHtml, function(err){
         if (err) throw err;
         
@@ -104,7 +111,7 @@ async function writeHtml(){
 }
 
 
-// initialQuestions();
+// invoke function to start questions
 expandQuestions();
 
 
