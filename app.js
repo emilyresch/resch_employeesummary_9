@@ -14,13 +14,107 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+//make an initial question function - asking what the role is 
+//THEN make following questions that relate to specific roles
+//make a confirm input type prompt to ask if they would like to add another teammate
+const teamArray = [];
+
+function initialQuestions() {
+
+    return inquirer.prompt([{
+            type: "list",
+            name: "role",
+            message: "Who would you like to add to your team?",
+            choices: ["Manager", "Intern", "Engineer"]
+
+        },
+        {
+            type: "input",
+            name: "name",
+            message: "What is their name?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is their email address?"
+        },
+        {
+            type: "number",
+            name: "id",
+            message: "What is their Employee ID number?"
+        }
+    ]);
+}
+
+async function expandQuestions(){
+    try{
+        const employee = await initialQuestions();
+        if (employee.role === "Manager"){
+            const office = await Manager.managerQuestions();
+            // console.log(office);
+            const newManager = new Manager(employee.name, employee.id, employee.email, employee.role, office.office);
+            // console.log(newManager);
+            teamArray.push(newManager);
+            // console.log(teamArray);
+        }else if (employee.role === "Engineer"){ 
+            const username = await Engineer.engineerQuestions();
+            // console.log(username);
+            const newEngineer = new Engineer(employee.name, employee.id, employee.email, employee.role, username.username);
+            teamArray.push(newEngineer);
+            // console.log(newEngineer);
+        }else if(employee.role === "Intern"){
+            const school = await Intern.internQuestions();
+            // console.log(school);
+            const newIntern = new Intern(employee.name, employee.id, employee.email, employee.role, school.school);
+            teamArray.push(newIntern);
+            // console.log(newIntern);
+        }
+        finalQuestion();
+        // console.log(employee);
+    }catch(error){
+        console.log(error);
+    }
+}
+
+function finalQuestion() {
+    return inquirer.prompt({
+        type: "confirm",
+        name: "teammate",
+        message: "Would you like to add another teammate?"
+    }).then(function (answers) {
+        // console.log(answers);
+        if (!answers.teammate) {
+            console.log("You don't want to add another teammate");
+            // render(teamArray);
+            writeHtml();
+        } else {
+            expandQuestions();
+
+        }
+    })
+
+}
+
+async function writeHtml(){
+    const teamHtml = await render(teamArray);
+    fs.writeFile(outputPath, teamHtml, function(err){
+        if (err) throw err;
+        
+    })
+}
+
+
+// initialQuestions();
+expandQuestions();
+
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
+// `output` folder. You can use the variable `outputPath` above to target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
 
