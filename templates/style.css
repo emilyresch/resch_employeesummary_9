@@ -1,0 +1,27 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.team-heading {
+    background-image: url(https://i1.wp.com/geoawesomeness.com/wp-content/uploads/2017/09/Coding-Geospatial.jpg?ssl=1);
+    background-position: center;
+    color:rgb(161, 28, 13);
+    font-weight: 200;
+}
+
+.text-center {
+    font-size: 4em;
+    text-shadow: 2px 2px 3px white;
+}
+
+
+.employee-card{
+    margin: 1em;
+}
+
+.card-header {
+    color:rgb(8, 73, 112);
+    background-color: rgb(169, 191, 204);
+    font-weight: 200;
+}
+
