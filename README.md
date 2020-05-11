@@ -5,7 +5,6 @@
 _________________________
 
 ![Repo Size badge](https://img.shields.io/github/repo-size/emilyresch/resch_employeesummary_9)
-![File Size badge](https://img.shields.io/github/size/emilyresch/resch_employeesummary_9)
 ![GitHub License](https://img.shields.io/github/license/emilyresch/resch_employeesummary_9)
 
 _________________________
