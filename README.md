@@ -16,7 +16,6 @@ _________________________
 
 ### Table of Contents
 - [Installing](#installing)
-- [Contributors](#contributors)
 - [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
@@ -27,8 +26,6 @@ _________________________
 ### Installing
 You will need Express in Node js to run this app.
 
-## Contributors
- - 
 
 ### Tests
 No tests
