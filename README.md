@@ -55,7 +55,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Heroku
-Heroku link to come! Please download the code and run in the terminal to use the app.
+Link to final employee page: https://employeetemplate.herokuapp.com/index.html
+Please download the code and run in the terminal to use the app.
 
 
 _____________________
