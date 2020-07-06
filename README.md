@@ -16,7 +16,7 @@ This app allows users to easily keep track of their teammate's information using
 
 Answer the inquirer promts to fill in employee cards with names, emails, employee numbers, and roles. The app will continue to ask if the user would like to add a new employee until the user says no, and then their team.html will be generated.
 
-![](images/templateimg.png)git 
+![](images/templateimg.png)
 _________________________
 
 ### Table of Contents
@@ -60,4 +60,4 @@ Heroku link to come! Please download the code and run in the terminal to use the
 
 _____________________
 
-![Github profile pic](https://avatars2.githubusercontent.com/emilyresch)
+![Github profile pic](https://avatars2.githubusercontent.com/emilyresch =100px)
