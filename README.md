@@ -60,4 +60,4 @@ Heroku link to come! Please download the code and run in the terminal to use the
 
 _____________________
 
-![Github profile pic](https://avatars2.githubusercontent.com/emilyresch =100x)
+![Github profile pic](https://avatars2.githubusercontent.com/emilyresch =100x100)
