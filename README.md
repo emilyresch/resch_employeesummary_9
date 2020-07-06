@@ -12,8 +12,11 @@ _________________________
 ## Description:
 This app allows users to easily keep track of their teammate's information using a CLI. For this assingment we were provied the files inside of the templates folder and the test folder.
 
+![Test](images/ezgif.com-add-text.gif)
+
 Answer the inquirer promts to fill in employee cards with names, emails, employee numbers, and roles. The app will continue to ask if the user would like to add a new employee until the user says no, and then their team.html will be generated.
 
+![](images/templateimg.png)git 
 _________________________
 
 ### Table of Contents
